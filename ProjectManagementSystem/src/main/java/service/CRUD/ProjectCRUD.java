@@ -29,7 +29,7 @@ public class ProjectCRUD extends AbstractCRUD implements CRUDable<Project> {
     @Override
     public Project read(int id) throws SQLException {
         String sqlQuery = "SELECT id, name, description FROM projects WHERE id = " + id;
-        System.out.println(sqlQuery);
+        //System.out.println(sqlQuery);
         ResultSet rs = statement.executeQuery(sqlQuery);
         if (rs.next()){
             int newID = rs.getInt(1);

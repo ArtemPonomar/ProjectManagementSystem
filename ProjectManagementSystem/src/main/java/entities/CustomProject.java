@@ -25,6 +25,6 @@ public class CustomProject {
     public String toString() {
         return "\nProject " +
                 "name = '" + name + '\'' +
-                ", developersCount = " + developersCount + "\n";
+                ", developersCount = " + developersCount;
     }
 }

@@ -14,14 +14,6 @@ public abstract class AbstractCRUD {
         this.statement = connection.createStatement();
     }
 
-//    private void executeUpdate(String sql) {
-//        try {
-//            statement.executeUpdate(sql);
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//    }
-
     protected int getRecentID(String table){
         String sql = "SELECT MAX(id) FROM ${1}";
         sql = sql.replace("${1}", table);
@@ -35,16 +27,4 @@ public abstract class AbstractCRUD {
         }
         return -1;
     }
-//    public void create(String table, String[] values) {
-//        String sqlQuery = "INSERT INTO " + table + " (";
-//        for (String value : values) {
-//            sqlQuery += value + ", ";
-//        }
-//        sqlQuery += ") VALUES (";
-//        for (String value : values) {
-//            sqlQuery += value + ", ";
-//        }
-//        sqlQuery += ")";
-//        executeUpdate(sqlQuery);
-//    }
 }

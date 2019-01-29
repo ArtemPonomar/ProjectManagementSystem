@@ -55,7 +55,7 @@ public class Developer {
 
     @Override
     public String toString() {
-        return "Developer{" +
+        return "\nDeveloper{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", sername='" + sername + '\'' +

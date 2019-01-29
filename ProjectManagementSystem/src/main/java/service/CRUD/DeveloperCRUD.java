@@ -26,7 +26,7 @@ public class DeveloperCRUD extends AbstractCRUD implements CRUDable<Developer>{
     @Override
     public Developer read(int id) throws SQLException {
         String sqlQuery = "SELECT id, name, sername, salary FROM developers WHERE id = " + Integer.toString(id);
-        System.out.println(sqlQuery);
+        //System.out.println(sqlQuery);
         ResultSet rs = statement.executeQuery(sqlQuery);
         if (rs.next()){
             int newID = rs.getInt(1);
