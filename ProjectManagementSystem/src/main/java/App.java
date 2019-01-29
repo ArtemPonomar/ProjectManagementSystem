@@ -1,4 +1,3 @@
-import entities.Developer;
 import entities.Project;
 import entities.Skill;
 import service.DAO;
@@ -39,24 +38,6 @@ public class App {
             }
             System.out.println("Want to continue? (yes/no)");
         } while (!scanner.next().equals("no"));
-
-
-//        Project project = new Project();
-//        Skill skill = new Skill();
-//        project.setName("project1");
-//        skill.setType("Java");
-//        skill.setLevel("Middle");
-
-        //task1 test
-        //dao.getTotalDeveloperSalaryOfProject(project);
-        //task2 test
-        //System.out.println(dao.getDevelopersOnProject(project));
-        //task3 test
-        //System.out.println(dao.getDevelopersWithSkillType(skill));
-        //task4 test
-        //System.out.println(dao.getDevelopersWithSkillLevel(skill));
-        //task5 test
-        //System.out.println(dao.getCustomProjectList());
     }
 
     private static void executeTask1(Scanner scanner, DAO dao) throws SQLException {
