@@ -1,10 +1,18 @@
 package entities;
 
+import javax.persistence.*;
 import java.util.Objects;
 
+@Entity
+@Table(name = "skills")
 public class Skill {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id;
+    @Column(name = "type")
     private String type;
+    @Column(name = "level")
     private String level;
 
     public int getId() {
@@ -47,8 +55,7 @@ public class Skill {
     @Override
     public String toString() {
         return "Skill{" +
-                "id=" + id +
-                ", type='" + type + '\'' +
+                "type='" + type + '\'' +
                 ", level='" + level + '\'' +
                 '}';
     }

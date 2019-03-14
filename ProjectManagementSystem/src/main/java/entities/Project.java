@@ -1,11 +1,38 @@
 package entities;
 
-import java.util.Objects;
+import org.hibernate.mapping.Set;
 
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Objects;
+import java.util.logging.Logger;
+
+@Entity
+@Table(name = "projects")
 public class Project {
+    final static org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(Project.class);
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "projectsForDeveloper")
+    private java.util.Set<Developer> devsOnProject = new HashSet<>();
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id;
+    @Column(name = "name")
     private String name;
+    @Column(name = "description")
     private String description;
+
+
+
+    public java.util.Set<Developer> getDevsOnProject() {
+        return devsOnProject;
+    }
+
+    public void setDevsOnProject(java.util.Set<Developer> devsOnProject) {
+        this.devsOnProject = devsOnProject;
+    }
 
     public int getId() {
         return id;
